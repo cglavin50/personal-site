@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/*
+ * Design tokens live here, not scattered across components.
+ * Tailwind v4 reads `@theme` and generates utilities from it
+ * (e.g. --color-accent below becomes `bg-accent`, `text-accent`, etc).
+ * Change a value here and every usage across the site updates.
+ */
+@theme {
+	/* Minimal/mono palette: neutral grays + a single accent. */
+	--color-ink: #18181b; /* primary text */
+	--color-muted: #71717a; /* secondary text */
+	--color-subtle: #e4e4e7; /* borders, dividers */
+	--color-canvas: #fafafa; /* page background */
+	--color-accent: #2563eb; /* the one spot of color: links, focus rings */
+
+	--font-sans:
+		ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--font-mono:
+		ui-monospace, 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+}
+
+body {
+	background-color: var(--color-canvas);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+}
