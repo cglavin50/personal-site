@@ -1,31 +1,43 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-/*
- * Design tokens live here, not scattered across components.
- * Tailwind v4 reads `@theme` and generates utilities from it
- * (e.g. --color-accent below becomes `bg-accent`, `text-accent`, etc).
- * Change a value here and every usage across the site updates.
- */
-@theme {
-	/* Minimal/mono palette: neutral grays + a single accent. */
-	--color-ink: #18181b; /* primary text */
-	--color-muted: #71717a; /* secondary text */
-	--color-subtle: #e4e4e7; /* borders, dividers */
-	--color-canvas: #fafafa; /* page background */
-	--color-accent: #2563eb; /* the one spot of color: links, focus rings */
-	--font-sans: "Hand Typewriter", ui-sans-serif, system-ui, sans-serif;
+@plugin "@iconify/tailwind4" {
+ scale: 3.0;
 }
 
-@font-face {
-    font-family: "Hand Typewriter";
-    src: url("/fonts/hand_typewriter.woff2") format("woff2");
-    font-weight: 700;
-    font-display: swap;
+/* light mode defaults */
+:root {
+  color-scheme: light dark;
+  --bg: oklch(0.9851 0 0);
+  --ink: oklch(0.2 0 0);
+  --muted: oklch(0.5 0 0);
+  --subtle: oklch(0.9 0 0);
+  --accent: oklch(0.8698 0.0723 6.86);
+}
+
+/* dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(0.2273 0.0038 286.09);
+    --ink: oklch(0.95 0 0);
+    --muted: oklch(0.7 0 0);
+    --subtle: oklch(0.3 0 0);
+    --accent: oklch(0.8662 0.2467 93.71);
+  }
+}
+
+@theme inline {
+  --font-sans: "Hand Typewriter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: var(--bg);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
 }
 
 body {
-	background-color: var(--color-canvas);
-	color: var(--color-ink);
-	font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
 }
