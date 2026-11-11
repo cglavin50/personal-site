@@ -40,7 +40,7 @@
 	</div>
 	<!-- TODO: figure out appropriate values for sizes -->
 	<enhanced:img
-		src="$lib/assets/cooper-apt-portrait.JPG"
+		src="$lib/assets/cooper-stair.webp"
 		alt="portrait of me"
 		fetchpriority="high"
 		class="ml-auto h-auto w-4/5 rounded-xl border-6 border-accent"

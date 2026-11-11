@@ -8,11 +8,11 @@
 /* light mode defaults */
 :root,
 [data-theme="light"] {
-  --bg: oklch(0.9851 0 0);
+  --bg: oklch(0.93 0 0);
   --ink: oklch(0.2 0 0);
   --muted: oklch(0.5 0 0);
   --subtle: oklch(0.9 0 0);
-  --accent: oklch(0.8698 0.0723 6.86);
+  --accent: oklch(0.4046 0.0677 148.65);
 }
 
 [data-theme="dark"] {
