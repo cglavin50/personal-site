@@ -46,3 +46,5 @@
 		class="ml-auto h-auto w-4/5 rounded-xl border-6 border-accent"
 	/>
 </div>
+
+<!-- TODO: add light/dark mode button (next to my name, or badges) -->

@@ -6,8 +6,8 @@
 }
 
 /* light mode defaults */
-:root {
-  color-scheme: light dark;
+:root,
+[data-theme="light"] {
   --bg: oklch(0.9851 0 0);
   --ink: oklch(0.2 0 0);
   --muted: oklch(0.5 0 0);
@@ -15,15 +15,12 @@
   --accent: oklch(0.8698 0.0723 6.86);
 }
 
-/* dark mode overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: oklch(0.2273 0.0038 286.09);
-    --ink: oklch(0.95 0 0);
-    --muted: oklch(0.7 0 0);
-    --subtle: oklch(0.3 0 0);
-    --accent: oklch(0.8662 0.2467 93.71);
-  }
+[data-theme="dark"] {
+  --bg: oklch(0.2273 0.0038 286.09);
+  --ink: oklch(0.95 0 0);
+  --muted: oklch(0.7 0 0);
+  --subtle: oklch(0.3 0 0);
+  --accent: oklch(0.8331 0.1159 68.36);
 }
 
 @theme inline {
