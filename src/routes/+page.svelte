@@ -1,3 +1,26 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	type Theme = 'light' | 'dark';
+
+	// default to light, <head> handles flickering
+	// low risk, we aren't overriding this is just used for initial render of the icon anyways
+	let theme: Theme = $state('light');
+	onMount(() => {
+		theme = (document.documentElement.getAttribute('data-theme') as Theme) ?? 'light';
+	});
+
+	function setTheme(next: Theme) {
+		document.documentElement.setAttribute('data-theme', next);
+		localStorage.setItem('theme', next);
+		theme = next;
+	}
+
+	function toggleTheme() {
+		setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+	}
+</script>
+
 <div class="mx-3xl flex justify-between px-6">
 	<!-- TODO: fix spacing to make image a little shorter  -->
 	<div class="mx-auto mb-auto flex grow-2 flex-col gap-8 px-6 text-lg">
@@ -36,15 +59,38 @@
 			>
 				<span class="icon-[ant-design--linkedin-filled]"></span>
 			</a>
+
+			<button
+				class="transition-transform duration-300 hover:scale-110"
+				aria-label="toggle contrast mode"
+				onclick={() => {
+					toggleTheme();
+				}}
+			>
+				{#if theme === 'light'}
+					<span class="icon-[ant-design--moon-outlined]"></span>
+				{:else}
+					<span class="icon-[ant-design--sun-filled]"></span>
+				{/if}
+			</button>
 		</div>
 	</div>
 	<!-- TODO: figure out appropriate values for sizes -->
-	<enhanced:img
-		src="$lib/assets/cooper-stair.webp"
-		alt="portrait of me"
-		fetchpriority="high"
-		class="ml-auto h-auto w-4/5 rounded-xl border-6 border-accent"
-	/>
+	{#if theme === 'light'}
+		<enhanced:img
+			src="$lib/assets/cooper-apt-portrait.webp"
+			alt="portrait of me"
+			fetchpriority="high"
+			class="ml-auto h-auto w-4/5 rounded-xl border-6 border-accent"
+		/>
+	{:else}
+		<enhanced:img
+			src="$lib/assets/cooper-stair.webp"
+			alt="portrait of me"
+			fetchpriority="high"
+			class="ml-auto h-auto w-4/5 rounded-xl border-6 border-accent"
+		/>
+	{/if}
 </div>
 
 <!-- TODO: add light/dark mode button (next to my name, or badges) -->
