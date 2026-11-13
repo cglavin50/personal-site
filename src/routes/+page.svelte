@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import PortraitCard from '$lib/components/PortraitCard.svelte';
 
 	type Theme = 'light' | 'dark';
 
@@ -76,21 +77,7 @@
 		</div>
 	</div>
 	<!-- TODO: figure out appropriate values for sizes -->
-	{#if theme === 'light'}
-		<enhanced:img
-			src="$lib/assets/cooper-apt-portrait.webp"
-			alt="portrait of me"
-			fetchpriority="high"
-			class="ml-auto rounded-xl border-6 border-accent"
-		/>
-	{:else}
-		<enhanced:img
-			src="$lib/assets/cooper-stair.webp"
-			alt="portrait of me"
-			fetchpriority="high"
-			class="ml-auto rounded-xl border-6 border-accent"
-		/>
-	{/if}
+	<PortraitCard class="ml-auto w-4/5" />
 </div>
 
 <!-- TODO: add light/dark mode button (next to my name, or badges) -->
