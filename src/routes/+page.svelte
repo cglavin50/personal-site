@@ -27,19 +27,22 @@
 	<div class="mx-auto mb-auto flex grow-2 flex-col gap-8 px-6 text-lg">
 		<!-- TODO: add accent color -->
 		<h1 class="w-full min-w-20 text-3xl tracking-tight text-accent">Hi, I'm Cooper</h1>
-		<p class="text-ink prose-neutral">
-			I'm a fullstack developer who loves exploring rabbit holes. I've worked as a frontend
-			developer, backend developer, and as a devops engineer. I love finding new problems to explore
-			:)
+		<p>
+			I'm a software engineer at <a
+				href="https://www.citian.co/about"
+				target="_blank"
+				class="text-accent">Citian</a
+			>, building systems to help improve pedestrian accessibility and improve local infrastructure.
+		</p>
+		<p>
+			I work end-to-end: fullstack <strong>(TypeScript, Go)</strong>, infrastructure
+			<strong>(OpenTofu/Terraform, CDK)</strong>, and the system design and engineering workflows
+			that tie projects together.
 		</p>
 
-		<p class="text-ink">
-			I currently work at <a href="https://www.citian.co/about" target="_blank" class="text-accent"
-				>Citian</a
-			>, building Work Order management systems to improve pedestrian accessibility and help
-			citizens stay connected to their local government. If you are interested in the space or want
-			to learn more, please reach out.
-			<a href="mailto:cooperglavin@gmail.com" target="_blank">email: cooperglavin@gmail.com</a>
+		<p>
+			I care about implementing AI in a secure, responsible, and maintainable way that empowers
+			developers to produce better software.
 		</p>
 
 		<div class="flex gap-4">
