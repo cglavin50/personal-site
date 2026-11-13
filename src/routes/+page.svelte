@@ -81,14 +81,14 @@
 			src="$lib/assets/cooper-apt-portrait.webp"
 			alt="portrait of me"
 			fetchpriority="high"
-			class="ml-auto h-auto w-4/5 rounded-xl border-6 border-accent"
+			class="ml-auto rounded-xl border-6 border-accent"
 		/>
 	{:else}
 		<enhanced:img
 			src="$lib/assets/cooper-stair.webp"
 			alt="portrait of me"
 			fetchpriority="high"
-			class="ml-auto h-auto w-4/5 rounded-xl border-6 border-accent"
+			class="ml-auto rounded-xl border-6 border-accent"
 		/>
 	{/if}
 </div>
